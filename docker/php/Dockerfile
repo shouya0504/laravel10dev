@@ -16,9 +16,6 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install pdo_mysql mysqli exif
 RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
 
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-RUN sudo apt-get install nodejs
-
 WORKDIR /src
 ADD . /src/storage
 RUN chown -R www-data:www-data /src/storage

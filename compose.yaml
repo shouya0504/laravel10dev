@@ -18,9 +18,7 @@ services:
     depends_on:
       - mysql
     volumes:
-      - ./:/src
-      - /src/node_modules
-      - /src/vendor
+      - ./docker/php/laravel10/:/src
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
 
   mysql:
